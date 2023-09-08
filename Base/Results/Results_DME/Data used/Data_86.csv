@@ -1,0 +1,25 @@
+Subsets,Subsets_2,Type of units,Parameters-->,Used (1 or 0),Unit tag,Yearly demand (kg fuel),Produced from,El balance,Heat balance,Process heat balance,H2 balance,CSP balance,Max Capacity,Fuel production rate (kg output/kg input),Heat generated (kWh/output),Process heat generated (kWh/output),Load min (% of max capacity),Ramp up (% of capacity /h),Ramp down (% of capacity /h),Electrical consumption (kWh/output),Investment (EUR/Capacity installed),Fixed cost (EUR/Capacity installed/y),Variable cost (EUR/Output),Fuel selling price (EUR/output),Fuel buying price (EUR/output),CO2e infrastructure (kg CO2e/Capacity/y),CO2e process (kg CO2e/output),Land use (m2/Capacity),Annuity factor
+0,0,0,Year-->,All,All,All,All,All,All,All,All,All,All,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench
+0,0,0,0,Used (1 or 0)All,Unit tagAll,Yearly demand (kg fuel)All,Produced fromAll,El balanceAll,Heat balanceAll,Process heat balanceAll,H2 balanceAll,CSP balanceAll,Max CapacityAll,Fuel production rate (kg output/kg input)2030 bench,Heat generated (kWh/output)2030 bench,Process heat generated (kWh/output)2030 bench,Load min (% of max capacity)2030 bench,Ramp up (% of capacity /h)2030 bench,Ramp down (% of capacity /h)2030 bench,Electrical consumption (kWh/output)2030 bench,Investment (EUR/Capacity installed)2030 bench,Fixed cost (EUR/Capacity installed/y)2030 bench,Variable cost (EUR/Output)2030 bench,Fuel selling price (EUR/output)2030 bench,Fuel buying price (EUR/output)2030 bench,CO2e infrastructure (kg CO2e/Capacity/y)2030 bench,CO2e process (kg CO2e/output)2030 bench,Land use (m2/Capacity)2030 bench,Annuity factor2030 bench
+0,0,0,Line/Column index,1,2,3,4,5,6,7,8,9,10,15,25,35,45,55,65,75,85,95,105,115,125,135,145,155,165
+Product,NoSubset,Biomass bamboo 1,5,1,Biomass bamboo 1,0,Product/Reactant1,0,0,0,0,0,20000,2.21,0,0,0.0,1.0,1.0,0,0,0,0,0,0.14245,3.560584789265715,0,0,0
+Product,Biochar_sell,Sale of biochar,8,1,Biochar,0,Product/Reactant1,0,0,0,0,0,40000,0.0,0,0,0.0,1.0,1.0,0,0,0,0,0.1185,0,0,0,0,0
+Product/Reactant1,Min_demand_MainFuel,Bamboo1-stage-SOEC,10,1,DME-B1,65700000,Reactant6,0,1,1,0,0,20000,11.91,0.51,1.43,0.5,1.0,1.0,0.32,12905,1209.51,0.0093267946332186,0,0,18.474666666666668,0,0,0.09367877905196811
+Reactant11,NoSubset,Desalination plant,16,1,H2O sea,0,-,0,0,0,0,0,400000,0,0,0,0.0,1.0,1.0,0.006749999999999999,134.434,4.03302,0,0,0,0,0,0,0.11682954493601999
+Product/Reactant3,PWL,Electrolysers SOEC heat integrated,20,1,H2_from_SOEC_HI,0,Reactant11,0,1,0,1,0,20000,0.08888888888888889,0,0,0.0,1.0,1.0,34.2,39583.97811177662,3384.4301285569013,0,0,0,120.74318234482759,0,15.936,0.08849557522123894
+Reactant6,NoSubset,H2 pipeline to Bamboo-1,26,1,H2_pipeline_to_Bamboo-1,0,-,0,0,0,-1,0,20000,0,0,0,0.0,1.0,1.0,0,0,0,0,0,0,0,0,0,0
+Heat_in,Heat_buy,Heat from district heating,31,1,Heat_import,0,-,0,1,0,0,0,2000000,0,0,0,0.0,1.0,1.0,0,0,0,0,0,0,0,0,0,0
+Heat_out,Heat_sell,Heat sent to district heating,32,1,Heat_export,0,-,0,-1,0,0,0,2000000,0,1,0,0.0,1.0,1.0,0,0,0,0,0.02,0,0,0,0,0
+NoSubset,Process_heat_sell,Heat sent to other process,33,1,Heat_export_process,0,-,0,0,-1,0,0,2000000,0,0,1,0.0,1.0,1.0,0,0,0,0,0.0335,0,0,0,0,0
+Product,O2_sell,Sale of oxygen,34,1,O2,0,Product/Reactant3,0,0,0,0,0,180000,8,0,0,0.0,1.0,1.0,0,0,0,0,0.05,0,0,0,0,0
+Stor_in,NoSubset,H2 pipes compressor,38,1,H2_to_pipe,0,-,0,0,0,-1,0,20000,0,0,0,0.0,1.0,1.0,0.94,0,0,0,0,0,0,0,0,0.09367877905196811
+Stor_out,NoSubset,H2 pipes valve,39,1,H2_from_pipe,0,-,0,0,0,1,0,20000,0,0,0,0.0,1.0,1.0,0,0,0,0,0,0,0,0,0,0
+Tank,NoSubset,H2 buried pipes,40,1,H2_stored_pipe,0,-,0,0,0,0,0,20000000,0,0,0,0.09,1.0,1.0,0,250,7.5,0,0,0,0.006226074074074075,0,1.0,0.08174285816161557
+RPU_Solar_track,NoSubset,Solar tracking,42,1,Solar_tracking,0,-,1,0,0,0,0,2000000,0,0,0,0.0,1.0,1.0,0,375.4044,8.133762,0.0,0,0,90.58479532163742,0,15.93,0.08386016150058533
+RPU_ON_SP198-HH100,NoSubset,ON_SP198-HH100,43,1,SP198-HH100,0,-,1,0,0,0,0,2000000,0,0,0,0.0,1.0,1.0,0,1507.4406452987776,11.8252386,0.0012722038,0,0,55.12222222222222,0,171.96,0.08882743338727227
+RPU_ON_SP198-HH150,NoSubset,ON_SP198-HH150,44,1,SP198-HH150,0,-,1,0,0,0,0,2000000,0,0,0,0.0,1.0,1.0,0,1876.1086453312696,11.8252386,0.0012722038,0,0,55.12222222222222,0,171.96,0.08882743338727227
+PU_Grid_in,Grid_buy,Electricity from the grid,60,0,Power_from_the_grid,0,-,1,0,0,0,0,2000000,0,0,0,0.0,1.0,1.0,0,180,0,0,0,0.016649999999999998,0,0,0,0.08882743338727227
+Grid_out,Grid_sell,Curtailment,61,1,Curtailment,0,-,-1,0,0,0,0,24000,0,0,0,0.0,1.0,1.0,0,0,0,0,0,0,0,0,0,0
+Stor_in,NoSubset,Charge batteries,63,1,Electricity_to_batteries,0,-,-1,0,0,0,0,10000000,0,0,0,0.0,1.0,1.0,0.05,0,0,0,0,0,0,0,0,0
+Stor_out,NoSubset,Discharge batteries,64,1,Electricity_from_batteries,0,-,1,0,0,0,0,60000000,0,0,0,0.0,1.0,1.0,0.05,0,0,0,0,0,0,0,0,0
+Tank,NoSubset,Batteries,65,1,Electricity_stored,0,-,0,0,0,0,0,20000000,0,0,0,0.0,1.0,1.0,0,180,2.6999999999999997,0,0,0,1.5728301886792453,0,0.017333333333333333,0.10185220882315059
