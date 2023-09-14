@@ -1,0 +1,18 @@
+Sub RelocateComments()
+
+'NOTE!! comments in active sheet
+
+On Error GoTo errh
+Dim r As Range
+For Each r In ActiveSheet.UsedRange.SpecialCells(xlCellTypeComments)
+With r.Comment
+.Shape.TextFrame.AutoSize = True
+.Visible = True
+.Shape.Top = .Parent.Top - 10
+.Shape.Left = .Parent.Offset(, 1).Left + 10
+End With
+Next
+Exit Sub
+errh:
+MsgBox "no comments in activesheet"
+End Sub
