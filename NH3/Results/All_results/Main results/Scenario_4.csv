@@ -1,0 +1,37 @@
+Scenario;Type of unit;Year data;Location;Profile;Fuel;Electrolyser;CO2 capture;CO2 tax level upstream (Eur/kgCO2);CO2 tax level operational(Eur/kgCO2);Weight costs vs emissions;Max yearly emission treshhold;Renewable criterion;Criterion application;Installed capacity(MW or t/h);Total investment(MEuros);Annualised investment(MEuros);Fixed O&M(MEuros);Variable O&M(MEuros);CO2 tax infrastructure (MEuros);CO2 tax process (MEuros);Fuel cost(MEuros);Cost per unit(MEuros);Production(kton or GWh);Sale (MEuros);Electricity consumption(GWh);Production cost fuel (Euros/kgfuel);Production cost fuel (Euros/GJfuel);Production cost fuel (Euros/MWhfuel);Production cost per unit (Euros/kg or kWh output);Load average;Full load hours;CO2e per unit total (kgCO2e/GJfuel);CO2e per unit counted (kgCO2e/GJfuel);CO2e total all system (kg CO2e/GJfuel);CO2e counted all system (kg CO2e/GJfuel);Land use per unit (km2);Land use per unit (km2/GJfuel);Land use total system (km2/GJfuel);Av electricity cost(Euros/MWh)
+Semi-islanded;NH3 plant + ASU - AEC;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;51.57525672;343.6026123;30.40731082;13.74410449;0;0;0;0;44.15141532;425.8064516;0;191.6129032;0.735479452;39.54190603;142.3508617;0.10368893;0.979943258;8256.021951;0.147914312;0;97.98983462;97.70630226;0;0;2.68E-05;49.19306184
+Semi-islanded;Waste water plant;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;104.6946263;11.26014995;1.315518195;0.337804499;0;0;0;0.056047043;1.709369736;862.2621962;0;2.155655491;0;0;0;0.001982425;0.977563652;8235.973771;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;Electrolysers AEC;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;9.306189005;370.75857;32.81049292;37.075857;0;0;0;0;69.88634991;76.64552855;0;3816.947322;0;0;0;0.911812486;0.977563652;8235.973771;0.135614839;0;0;0;0.208551696;2.63E-05;0;49.19306184
+Semi-islanded;H2 pipeline to NH3 plant;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;9.283546209;0;0;0;0;0;0;0;0;76.64516129;0;0;0;0;0;0;0.979943258;8256.021951;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;Heat from district heating;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;NaN;NaN;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;Heat sent to district heating;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;52.82192879;0;0;0;0;0;0;0;0;435.0400201;0;0;0;0;0;0;0.977563652;8235.973771;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;Heat sent to other process;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;NaN;NaN;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;Sale of oxygen;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;74.44951204;0;0;0;0;0;0;0;0;613.1642284;0;0;0;0;0;0;0.977563652;8235.973771;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;H2 pipes compressor;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;3.328490958;0;0;0;0;0;0;0;0;0.245878118;0;0.231125431;0;0;0;0;0.008768041;73.8707483;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;H2 pipes valve;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;3.713418484;0;0;0;0;0;0;0;0;0.245510857;0;0;0;0;0;0;0.00784742;66.11451354;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;H2 buried pipes;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;4.080679653;1.020169913;0.083391605;0.030605097;0;0;0;0;0.113996702;19.43819685;0;0;0;0;0;0.005864572;0.565397083;4763.470427;3.21E-06;0;0;0;0.00408068;5.15E-07;0;49.19306184
+Semi-islanded;OFF_SP379-HH100;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;NaN;NaN;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;OFF_SP379-HH150;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;NaN;NaN;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;OFF_SP450-HH100;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;NaN;NaN;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;OFF_SP450-HH150;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;NaN;NaN;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;Electricity from the grid;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;486.9400988;87.64921778;7.785655054;0;0;0;0;189.525109;197.3107641;4010.947006;0;0;0;0;0;0.049193062;0.977690679;8237.043973;97.70630226;97.70630226;0;0;0;0;0;49.19306184
+Semi-islanded;Curtailment;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;0;NaN;NaN;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;Charge batteries;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;0;0;0;0;0;0;0;0;0;-1.30E-13;0;-6.51E-15;0;0;0;0;NaN;NaN;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;Discharge batteries;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;2.75E-12;0;0;0;0;0;0;0;0;-1.31E-13;0;-6.55E-15;0;0;0;0;-0.005660255;-47.68764893;0;0;0;0;0;0;0;49.19306184
+Semi-islanded;Batteries;2030 bench;Bornholm;2020;NH3;AEC;None;0;0;C1_E0;-1;None;0;0;0;0;0;0;0;0;0;0;-1.52E-14;0;0;0;0;0;0;NaN;NaN;0;0;0;0;0;0;0;49.19306184
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;Based on grid emission values:;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;kWh/kg;CO2/kWh;CO2/kg;CO2/Gjfuel;CO2/kg;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;9.419648272;0.58;5.463395998;97.98983462;1.822610924;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;Grid emission quartiles;0.266;2.50562644;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;0.188;1.770893875;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;0.169;1.591920558;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;0.086;0.810089751;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;0.039;0.367366283;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;0.066789429;0.629132933;;;;;;;;;;;;;;

@@ -1,0 +1,33 @@
+\begin{table}
+
+\caption{Techno-economical inputs 2050}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{llllll}
+\toprule
+Type of units & Input/Output & Capacity & Fuel production rate & Load min & Electrical consumption\\
+\midrule
+Units & - & - & kg output/kg input & \% of max capacity & kWh/output\\
+MeOH plant CCU & H\textsubscript{2}/MeOH & kgMeOH/h & 5.3\textsuperscript{1} & 10\textsuperscript{1} & 1.7\textsuperscript{1}\\
+NH\textsubscript{3} plant + ASU - AEC & H\textsubscript{2}/NH\textsubscript{3} & kgNH\textsubscript{3}/h & 5.6\textsuperscript{1} & 10\textsuperscript{1} & 0.4\textsuperscript{1}\\
+NH\textsubscript{3} plant + ASU - SOEC & H\textsubscript{2}/NH\textsubscript{3} & kgNH\textsubscript{3}/h & 5.6\textsuperscript{1} & 10\textsuperscript{1} & 0.6\textsuperscript{1}\\
+Desalination plant & -/H\textsubscript{2}O & kgH\textsubscript{2}O/h & 0 & 0 & 0\textsuperscript{2}\\
+\addlinespace
+Waste water plant & -/H\textsubscript{2}O & kgH\textsubscript{2}O/h & 0 & 0 & 0\textsuperscript{2}\\
+Electrolyser Park  AEC & H\textsubscript{2}O/H\textsubscript{2} & kgH\textsubscript{2}/h & 0.1\textsuperscript{3} & 0 & 49\textsuperscript{1}\\
+Electrolyser Park  SOEC heat integrated & H\textsubscript{2}O/H\textsubscript{2} & kgH\textsubscript{2}/h & 0.1\textsuperscript{3} & 0 & 34.2\textsuperscript{4}\\
+Electrolyser Park  SOEC alone & H\textsubscript{2}O/H\textsubscript{2} & kgH\textsubscript{2}/h & 0.1\textsuperscript{3} & 0 & 40\textsuperscript{1}\\
+Electrolyser Park  75AEC-25SOEC\textsubscript{HI} & H\textsubscript{2}O/H\textsubscript{2} & kgH\textsubscript{2}/h & 0.1\textsuperscript{3} & 0 & 45.3\\
+\addlinespace
+Electrolyser Park  75AEC-25SOEC\textsubscript{A} & H\textsubscript{2}O/H\textsubscript{2} & kgH\textsubscript{2}/h & 0.1\textsuperscript{3} & 0 & 46.8\\
+H\textsubscript{2} storage tank & NA & kgH\textsubscript{2} & 0 & 3\textsuperscript{5} & 0\\
+H\textsubscript{2} storage buried pipes & - & kgH\textsubscript{2} & 0 & 9\textsuperscript{6} & 0\\
+\bottomrule
+\multicolumn{6}{l}{\rule{0pt}{1em}\textsuperscript{1} Based on \cite{MMZCS2023}.}\\
+\multicolumn{6}{l}{\rule{0pt}{1em}\textsuperscript{2} Based on BhmWP12023  taking the best case scenario of near-term technology development.}\\
+\multicolumn{6}{l}{\rule{0pt}{1em}\textsuperscript{3} Consumption of non-purified water assuming a purification efficieny of 80\% based on BhmWP12023. Conversion of purified water to hydrogen is stoechiometric (9 kg of water consumed per kg of hydrogen).}\\
+\multicolumn{6}{l}{\rule{0pt}{1em}\textsuperscript{4} From this study.}\\
+\multicolumn{6}{l}{\rule{0pt}{1em}\textsuperscript{5} Based on \cite{Adams2019}.}\\
+\multicolumn{6}{l}{\rule{0pt}{1em}\textsuperscript{6} Based on \cite{Papadias2021} assuming same values as of 2020.}\\
+\end{tabular}}
+\end{table}

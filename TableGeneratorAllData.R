@@ -18,11 +18,11 @@ library(writexl)
 #------------------------------------------------------------------------------# 
 
 #Insert directory of the files:
-Directory <- 'C:/Users/s184356/OneDrive - Danmarks Tekniske Universitet/Skrivebord/DTU_MAN/OptiPlant-World/OptiPlant-World/Base/Data/Inputs';
-DirectoryBiblio <- 'C:/Users/s184356/OneDrive - Danmarks Tekniske Universitet/Skrivebord/DTU_MAN/Student Assistant/1-Bornholm reporting/Latex';
+Directory <- 'C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/MeOH/Data/Inputs';
+DirectoryBiblio <- 'C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME';
 
 #Insert excel file name:
-Filename <- "Bornholm_All_data_NEW.xlsx";
+Filename <- "DME_paper_data.xlsx";
 #Insert bib file name:
 Filenamebib <- "Bornholm_references.bib";
 
@@ -32,12 +32,17 @@ Sheetname1 <-"Data_base_case";
 #Reference/Source sheet
 Sheetname2 <-"Ref_base_case";
 
+#Select table type:
+# 'econ'
+# 'tech
+tabletype = 'tech'
+
 #Select the year:
 ### 2025
 ### 2030
 ### 2040
 ### 2050
-year<- 2050
+year<- 2030
 
 #Select the estimation:
 ### 'worst'
@@ -49,6 +54,10 @@ estimation_considered <- 'bench'
 ### 'CO2 capture DAC'
 ### 'CO2 capture PS'
 ### 'MeOH plant CCU'
+### 'MeOH - Biogas - SOEC'
+### 'MeOH - Biogas - None'
+### 'Biogas w H2'
+### 'Biogas wo H2'
 ### 'Biomass'
 ### 'Bio-eMeOH plant - AEC'
 ### 'Bio-eMeOH plant - SOEC'
@@ -102,10 +111,17 @@ estimation_considered <- 'bench'
 ### 'Discharge batteries'
 ### 'Batteries'
 
-Type_considered_all <- c('CO2 capture DAC','CO2 capture PS','MeOH plant CCU','Biomass','Bio-eMeOH plant - AEC','Bio-eMeOH plant - SOEC', 'NH3 plant + ASU - AEC', 'NH3 plant + ASU - SOEC', 'H2 client', 'Desalination plant', 'Waste water plant', 'Drinking water', 'Electrolysers AEC', 'Electrolysers SOEC heat integrated', 'Electrolysers SOEC alone', 'Electrolysers 75AEC-25SOEC_HI', 'Electrolysers 75AEC-25SOEC_A', 'H2 pipeline to MeOH CCU plant', 'H2 pipeline to BioMeOH plant', 'H2 pipeline to NH3 plant', 'H2 pipeline to client', 'Heat from district heating', 'Heat sent to district heating', 'Sale of oxygen', 'H2 tank compressor', 'H2 tank valve', 'H2 tank', 'H2 pipes compressor', 'H2 pipes valve', 'H2 buried pipes', 'Solar fixed', 'Solar tracking', 'ON_SP198-HH100', 'ON_SP198-HH150', 'ON_SP237-HH100', 'ON_SP237-HH150', 'ON_SP277-HH100', 'ON_SP277-HH150', 'ON_SP321-HH100', 'ON_SP321-HH150', 'OFF_SP379-HH100', 'OFF_SP379-HH150', 'OFF_SP450-HH100', 'OFF_SP450-HH150', 'CSP_tower', 'Charge TES', 'Discharge TES', 'TES', 'CSP + TES', 'Electricity from the grid', 'Curtailment', 'Diesel generator', 'Charge batteries', 'Discharge batteries', 'Batteries')
-Type_considered_econ <- c('MeOH plant CCU', 'NH3 plant + ASU - AEC', 'NH3 plant + ASU - SOEC', 'Desalination plant', 'Waste water plant','Electrolysers AEC', 'Electrolysers SOEC heat integrated', 'Electrolysers SOEC alone', 'Electrolysers 75AEC-25SOEC_HI', 'Electrolysers 75AEC-25SOEC_A','H2 tank', 'H2 buried pipes','OFF_SP379-HH100', 'OFF_SP379-HH150', 'OFF_SP450-HH100', 'OFF_SP450-HH150', 'Batteries')
-Type_considered_tech <- c('MeOH plant CCU', 'NH3 plant + ASU - AEC', 'NH3 plant + ASU - SOEC', 'Desalination plant', 'Waste water plant','Electrolysers AEC', 'Electrolysers SOEC heat integrated', 'Electrolysers SOEC alone', 'Electrolysers 75AEC-25SOEC_HI', 'Electrolysers 75AEC-25SOEC_A','H2 tank', 'H2 buried pipes', 'Batteries')
-Type_considered <- Type_considered_tech
+Type_considered_all <- c('CO2 capture DAC','CO2 capture PS','MeOH plant CCU','MeOH - Biogas - SOEC','MeOH - Biogas - None','Biogas w H2','Biogas wo H2','Biomass','Bio-eMeOH plant - AEC','Bio-eMeOH plant - SOEC', 'NH3 plant + ASU - AEC', 'NH3 plant + ASU - SOEC', 'H2 client', 'Desalination plant', 'Waste water plant', 'Drinking water', 'Electrolysers AEC', 'Electrolysers SOEC heat integrated', 'Electrolysers SOEC alone', 'Electrolysers 75AEC-25SOEC_HI', 'Electrolysers 75AEC-25SOEC_A', 'H2 pipeline to MeOH CCU plant', 'H2 pipeline to BioMeOH plant', 'H2 pipeline to NH3 plant', 'H2 pipeline to client', 'Heat from district heating', 'Heat sent to district heating', 'Sale of oxygen', 'H2 tank compressor', 'H2 tank valve', 'H2 tank', 'H2 pipes compressor', 'H2 pipes valve', 'H2 buried pipes', 'Solar fixed', 'Solar tracking', 'ON_SP198-HH100', 'ON_SP198-HH150', 'ON_SP237-HH100', 'ON_SP237-HH150', 'ON_SP277-HH100', 'ON_SP277-HH150', 'ON_SP321-HH100', 'ON_SP321-HH150', 'OFF_SP379-HH100', 'OFF_SP379-HH150', 'OFF_SP450-HH100', 'OFF_SP450-HH150', 'CSP_tower', 'Charge TES', 'Discharge TES', 'TES', 'CSP + TES', 'Electricity from the grid', 'Curtailment', 'Diesel generator', 'Charge batteries', 'Discharge batteries', 'Batteries')
+### Methanol from biogas
+Type_considered_econ <- c('MeOH plant CCU', 'MeOH - Biogas - SOEC','MeOH - Biogas - None','Waste water plant','Electrolysers SOEC alone','Electrolysers AEC','H2 buried pipes','Batteries')
+Type_considered_tech <- c('MeOH - Biogas - SOEC','MeOH - Biogas - None','Biogas w H2','Biogas wo H2','Waste water plant','Electrolysers SOEC alone','Electrolysers AEC','H2 buried pipes','Batteries')
+### Methanol and Ammonia production
+#Type_considered_econ <- c('MeOH plant CCU', 'NH3 plant + ASU - AEC', 'NH3 plant + ASU - SOEC', 'Desalination plant', 'Waste water plant','Electrolysers AEC', 'Electrolysers SOEC heat integrated', 'Electrolysers SOEC alone', 'Electrolysers 75AEC-25SOEC_HI', 'Electrolysers 75AEC-25SOEC_A','H2 tank', 'H2 buried pipes','OFF_SP379-HH100', 'OFF_SP379-HH150', 'OFF_SP450-HH100', 'OFF_SP450-HH150', 'Batteries')
+#Type_considered_tech <- c('MeOH plant CCU', 'NH3 plant + ASU - AEC', 'NH3 plant + ASU - SOEC', 'Desalination plant', 'Waste water plant','Electrolysers AEC', 'Electrolysers SOEC heat integrated', 'Electrolysers SOEC alone', 'Electrolysers 75AEC-25SOEC_HI', 'Electrolysers 75AEC-25SOEC_A','H2 tank', 'H2 buried pipes', 'Batteries')
+### DME on Bornholm
+Type_considered_econ <- c('Bamboo2-stage-SOEC', 'Bamboo1-stage-SOEC','Wheat2-stage-SOEC','Wheat1-stage-SOEC')
+Type_considered_tech <- c('Bamboo2-stage-SOEC', 'Bamboo1-stage-SOEC','Wheat2-stage-SOEC','Wheat1-stage-SOEC','Biomass bamboo 2','Biomass bamboo 1','Biomass wheat 2','Biomass wheat 1','Sale of biochar')
+
 #Selection of parameters, you can select within the following ones:
 ### 'Yearly demand'
 ### 'Produced from'
@@ -132,17 +148,26 @@ Type_considered <- Type_considered_tech
 
 #Note that "Type" and "Capacity" must always be there
 parameters_considered_all <- c('Type','Capacity','Yearly demand','Producedfrom','El balance','Heat balance','H2 balance','CSP balance','Max Capacity','Fuel production rate','Heat generated','Load min','Ramp up','Ramp down','Electrical consumption','Investment','Fixed cost','Variable cost','Fuel selling price','Fuel buying price','CO2e infrastructure','CO2e process','Land use', 'Annuity factor');
-parameters_considered_econ <- c('Type', 'Capacity',  'Investment','Fixed cost', 'Variable cost');
-parameters_considered_tech <- c('Type', 'Capacity', 'Input/Output', 'Fuel production rate', 'Load min','Electrical consumption');
-parameters_considered <- parameters_considered_tech
+parameters_considered_econ <- c('Type',  'Investment' , 'Capacity','Fixed cost', 'Variable cost');
+parameters_considered_tech <- c('Type', 'Input/Output', 'Capacity', 'Fuel production rate', 'Load min','Electrical consumption');
 
 #Insert 0 if you want economical assumptions and 1 for technology assumptions
 inout <- 1;
 
 #Insert the name of the text file to store the latex code for the table
-nametextfile <- "table_tech_2050.text";
+nametextfile <- paste0("table_",tabletype,"_2030.text");
 #Insert the name of the csv file to store the table values
-namecsvfile <- "csvtabletech.csv";
+namecsvfile <- paste0("csvtable",tabletype,".csv");
+
+if (tabletype == "tech") {
+  Type_considered <- Type_considered_tech
+  parameters_considered <- parameters_considered_tech
+  tablecaption <- "Technical inputs"
+} else {
+  Type_considered <- Type_considered_econ
+  parameters_considered <- parameters_considered_econ
+  tablecaption <- "Economical inputs"
+}
 
 #------------------------------------------------------------------------------#
 ################################## Main Code ################################### 
@@ -156,8 +181,8 @@ basedata <- read_excel(Filename, sheet = Sheetname1, range = "D7:FH63");
 refdata <- read_excel(Filename, sheet = Sheetname2, range = "D7:FH63");
 
 #Select the file you want to read the capacity and Input/Output from
-capacitybasedata <- read_excel("Capacity.xlsx", range = "B1:B56");
-inoutbasedata <- read_excel("Capacity.xlsx", range = "C1:C56");
+capacitybasedata <- read_excel("CapacityCSV.xlsx", range = "B1:B56");
+inoutbasedata <- read_excel("CapacityCSV.xlsx", range = "C1:C56");
 
 capacityrefdata <- data.frame(matrix(0, nrow = length(capacitybasedata), ncol = 1))
 inoutrefdata <- data.frame(matrix(0, nrow = length(inoutbasedata), ncol = 1))
@@ -209,6 +234,9 @@ original_columns <- colnames(basedata)
 basedata <- select(basedata, c(1:num_matches), matches(years_considered))
 basedata <- select(basedata, matches(parameters_considered))
 basedata <- select(basedata, c(1:num_matches), matches(estimation_considered))
+if (tabletype == 'econ') {
+  basedata <- basedata[, -which(names(basedata) == "Investment (EUR/Capacity installed)2030 worst")]
+}
 basedata <- basedata[,order(match(names(basedata[num_matches,]), original_columns))]
 basedatacsv <- basedata
 
@@ -354,7 +382,7 @@ referencesnew[counter] <- paste0(temp, collapse = " ")
 #Generate a Latex code for the table
 table <- basedatanew %>%
   #Table style generation
-  kbl(caption= paste("Techno-economical inputs", year, sep = " "),format="latex",align="l",booktabs = T,escape = F) %>%
+  kbl(caption= paste(tablecaption, year, sep = " "),format="latex",align="l",booktabs = T,escape = F) %>%
   kable_styling(latex_options = c( "scale_down"),position = "center")%>%
   kable_minimal(full_width = F,  html_font = "Source Sans Pro")%>%
   #Adding footnote with notes and references

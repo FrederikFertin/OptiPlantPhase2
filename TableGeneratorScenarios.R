@@ -23,21 +23,26 @@ library(openxlsx)
 ######################## Change this for the data needed #######################
 #------------------------------------------------------------------------------# 
 #Insert directory and name of the scenario file - CHANGE!
-setwd('C:/Users/njbca/Documents/Models/OptiPlant-World/Base/Data/Inputs')
-tablescenario = fread("Scenario_67.csv", sep=",", header = T)
+project <- 'MeOH'
+setwd('C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/MeOH/Results/Results_DME/Main results')
+tablescenario = fread("Scenario_100.csv", sep=",", header = T)
 
 
 #Filter by type of units
 typeofunits <- tablescenario$`Type of unit`
 typeofunits <- as.array(typeofunits)
 #Insert key words for the technologies wanted (you can print the array 'typeofunits' to see all the types of units) - CHANGE!
-keywords_typeofunits <- c('NH3','batteries','H2')
+keywords_typeofunits <- c('MeOH','batteries','H2')
+keywords_typeofunits <- c("MeOH - Biogas - SOEC","Biogas w H2","Waste water plant","Electrolysers SOEC alone","H2 buried pipes","Solar tracking","OFF_SP450-HH150","Curtailment","Electricity from the grid")
 
 
 #Filter by parameters
 parameters <- colnames(tablescenario)
 #Insert key words for the parameters wanted (you can print the array 'parameters' to see all the parameters) - CHANGE!
-keywords_parameters <- c('Type of unit','cost','production','location')
+#keywords_parameters <- c('Type of unit','cost','production','location', 'capacity')
+#keywords_parameters <- c('Type of unit','Fuel cost(MEuros)','Cost per unit(MEuros)','Production(kton or GWh)','Production cost per unit (Euros/kg or kWh output)')
+#keywords_parameters <- c('Type of unit', 'capacity', 'Fuel cost', 'Cost per unit', 'Production (kton', 'Production cost per unit')
+keywords_parameters <- c('Type of unit','kton', 'capacity','investment','electricity')
 
 #------------------------------------------------------------------------------# 
 ############################ Latex Table Generation ############################
@@ -93,6 +98,7 @@ tablescenario <- filtertablescenario%>%
   #gsub(pattern = "Batteries", replacement = "Battery Park ", ., fixed = TRUE)
 
 #Print the table in a text file
+setwd('C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/MeOH')
 sink(namefile)
 print(tablescenario)
 sink()
@@ -103,13 +109,13 @@ sink()
 #------------------------------------------------------------------------------#
 # Create a new Excel workbook
 wb <- createWorkbook()
-
+titlescenario <- substr(titlescenario, 0, 31)
 # Add the first data frame to a new sheet
 addWorksheet(wb, sheetName = titlescenario)
 writeData(wb, sheet = titlescenario, x = filtertablescenario, startRow = 1, startCol = 1)
 
 # Save the workbook to a file
-filescenario = paste0("C:/Users/njbca/Documents/Models/OptiPlant-World/Base/Data/Inputs",titlescenario,".xlsx")
+filescenario = paste0("C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/MeOH/",titlescenario,".xlsx")
 saveWorkbook(wb, file = filescenario, overwrite = TRUE)
 
 

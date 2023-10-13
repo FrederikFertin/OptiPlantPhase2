@@ -1,0 +1,22 @@
+\begin{table}
+
+\caption{Scenario MeOH Biogas SOEC - Bench fuel}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{lllllll}
+\toprule
+Type of unit & Installed capacity(MW or t/h) & Total investment(MEuros) & Annualised investment(MEuros) & Production(kton or GWh) & Electricity consumption(GWh) & Av electricity cost(Euros/MWh)\\
+\midrule
+MeOH - Biogas - SOEC & 2.1326717 & 32.2266039 & 2.8519118 & 15.9130435 & 0.0000000 & 54.62685\\
+Biogas w H\textsubscript{2} & 2.6804071 & 0.0000000 & 0.0000000 & 20.0000000 & 0.0000000 & 54.62685\\
+Waste water plant & 1.4580965 & 0.1568217 & 0.0183214 & 6.7993953 & 0.0169985 & 54.62685\\
+Electrolysers SOEC alone & 0.1296086 & 5.1304231 & 0.4540197 & 0.6043907 & 26.1096779 & 54.62685\\
+H\textsubscript{2} storage buried pipes & 5.5339467 & 1.3834867 & 0.1130902 & 24.0349081 & 0.0000000 & 54.62685\\
+\addlinespace
+Solar tracking & 8.2358687 & 3.7788439 & 0.3168945 & 13.0033249 & 0.0000000 & 54.62685\\
+OFF\_SP450-HH150 & 5.9457789 & 12.2055039 & 1.0841836 & 19.1216690 & 0.0000000 & 54.62685\\
+Electricity from the grid & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 54.62685\\
+Curtailment & 12.1604155 & 0.0000000 & 0.0000000 & 5.6512366 & 0.0000000 & 54.62685\\
+\bottomrule
+\end{tabular}}
+\end{table}

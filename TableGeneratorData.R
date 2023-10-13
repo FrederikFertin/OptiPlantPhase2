@@ -23,11 +23,12 @@ library(openxlsx)
 #------------------------------------------------------------------------------#
 #Load Data
 #Insert directory and name of the data file
-setwd('C:/Users/s184356/OneDrive - Danmarks Tekniske Universitet/Skrivebord/DTU_MAN/Student Assistant/1-Bornholm reporting/Latex/Results_pap3/Data used')
-tabledata = fread("Data_67.csv", sep=",", header = T)
+path = 'C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/MeOH/Results/Results_DME/Main results'
+setwd(path)
+tabledata = fread("Scenario_89.csv", sep=",", header = T)
 
 #Name for title and file name
-name = "Data 67"
+name = "Scenario 89"
 
 #Removing rows and columns
 tabledata <- tabledata[, -c(1:2)]
@@ -37,13 +38,13 @@ tabledata <- tabledata[-c(1:3),]
 typeofunits <- tabledata$`Type of unit`
 typeofunits <- as.array(typeofunits)
 #Insert key words for the technologies wanted (you can print the array 'typeofunits' to see all the types of units) - CHANGE!
-keywords_typeofunits <- c('NH3','batteries','H2')
+keywords_typeofunits <- c("MeOH - Biogas - SOEC","Electrolysers SOEC alone",'Batteries')
 
 
 #Filter by parameters
 parameters <- colnames(tabledata)
 #Insert key words for the parameters wanted (you can print the array 'parameters' to see all the parameters) - CHANGE!
-keywords_parameters <- c('Type of unit','cost','production','location')
+keywords_parameters <- c('Type of unit','cost','production','ramp','Electrical')
 
 #------------------------------------------------------------------------------# 
 ############################ Latex Table Generation ############################
@@ -114,7 +115,7 @@ addWorksheet(wb, sheetName = name)
 writeData(wb, sheet = name, x = filtertabledata, startRow = 1, startCol = 1)
 
 # Save the workbook to a file
-filedata = paste0("C:/Users/s184356/OneDrive - Danmarks Tekniske Universitet/Skrivebord/DTU_MAN/Student Assistant/1-Bornholm reporting/Latex/",name,".csv")
+filedata = paste0(path,"/",name,".csv")
 saveWorkbook(wb, file = filedata, overwrite = TRUE)
 
 

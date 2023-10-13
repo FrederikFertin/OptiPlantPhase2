@@ -1,0 +1,34 @@
+Subsets,Subsets_2,Type of units,Parameters-->,Used (1 or 0),Unit tag,Yearly demand (kg fuel),Produced from,El balance,Heat balance,Process heat balance,H2 balance,CSP balance,Max Capacity,Fuel production rate (kg output/kg input),Heat generated (kWh/output),Process heat generated (kWh/output),Load min (% of max capacity),Ramp up (% of capacity /h),Ramp down (% of capacity /h),Electrical consumption (kWh/output),Investment (EUR/Capacity installed),Fixed cost (EUR/Capacity installed/y),Variable cost (EUR/Output),Fuel selling price (EUR/output),Fuel buying price (EUR/output),CO2e infrastructure (kg CO2e/Capacity/y),CO2e process (kg CO2e/output),Land use (m2/Capacity),Annuity factor
+0,0,0,Year-->,All,All,All,All,All,All,All,All,All,All,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench,2030 bench
+0,0,0,0,Used (1 or 0)All,Unit tagAll,Yearly demand (kg fuel)All,Produced fromAll,El balanceAll,Heat balanceAll,Process heat balanceAll,H2 balanceAll,CSP balanceAll,Max CapacityAll,Fuel production rate (kg output/kg input)2030 bench,Heat generated (kWh/output)2030 bench,Process heat generated (kWh/output)2030 bench,Load min (% of max capacity)2030 bench,Ramp up (% of capacity /h)2030 bench,Ramp down (% of capacity /h)2030 bench,Electrical consumption (kWh/output)2030 bench,Investment (EUR/Capacity installed)2030 bench,Fixed cost (EUR/Capacity installed/y)2030 bench,Variable cost (EUR/Output)2030 bench,Fuel selling price (EUR/output)2030 bench,Fuel buying price (EUR/output)2030 bench,CO2e infrastructure (kg CO2e/Capacity/y)2030 bench,CO2e process (kg CO2e/output)2030 bench,Land use (m2/Capacity)2030 bench,Annuity factor2030 bench
+0,0,0,Line/Column index,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+Product,Min_demand_MainFuel,NH3 plant + ASU - SOEC,0,0,NH3-SOEC,0,Reactant9,0,0,0,0,0,0,Based on MMZCS2023,0,0,Based on MMZCS2023,Based on MMZCS2023,Based on MMZCS2023,Based on MMZCS2023,For a large-scale 95 t$_{NH_3}$/h plant capacity based on MMZCS2023 (includes ASU),4% Capex based on MMZCS2023,0,0,0,0,0,0,0.0
+Reactant11,NoSubset,Waste water plant,0,0,H2O wwtp,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,Based on BhmWP12023,Using the 2025 benchmark value based on BhmWP12023,3% Capex based on BhmWP12023,0,0,Medium water price from BhmWP12023,0,0,0,0
+Product/Reactant3,PWL,Electrolysers SOEC heat integrated,0,0,H2_from_SOEC_HI,0,Reactant11,0,0,0,0,0,0,Consumption of non-purified water assuming a purification efficieny of 80% based on BhmWP12023. Conversion of purified water to hydrogen is stoechiometric (9 kg of water consumed per kg of hydrogen).,0,0,0.0,0.0,0.0,From this study,Based on NREL2020,8.55% Capex based on NREL2020,0,0,0,0,0,0,0.0
+Reactant9,NoSubset,H2 pipeline to NH3 plant,0,0,H2_pipeline_to_NH3_plant,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0
+Heat_in,Heat_buy,Heat from district heating,0,0,Heat_import,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0
+Heat_out,Heat_sell,Heat sent to district heating,0,0,Heat_export,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0
+NoSubset,Process_heat_sell,Heat sent to other process,0,0,Heat_export_process,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0
+Product,O2_sell,Sale of oxygen,0,0,O2,0,Product/Reactant3,0,0,0,0,0,0,Stoechiometric conversion,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0
+Stor_in,NoSubset,H2 pipes compressor,0,0,H2_to_pipe,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,Compression work from 20 to 100 bars,0,0,0,0,0,0,0,0,0
+Stor_out,NoSubset,H2 pipes valve,0,0,H2_from_pipe,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0
+Tank,NoSubset,H2 buried pipes,0,0,H2_stored_pipe,0,-,0,0,0,0,0,0,0,0,0,Based on Papadias2021 assuming same values as of 2020,0.0,0.0,0,Based on Induspart2023 for a working pressure around 100 bars,3% Capex based on Induspart2023,0,0,0,0,0,0.0,0
+RPU_Solar_fixed,NoSubset,Solar fixed,0,0,Solar_fixed,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_Solar_track,NoSubset,Solar tracking,0,0,Solar_tracking,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_ON_SP198-HH100,NoSubset,ON_SP198-HH100,0,0,SP198-HH100,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_ON_SP198-HH150,NoSubset,ON_SP198-HH150,0,0,SP198-HH150,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_ON_SP237-HH100,NoSubset,ON_SP237-HH100,0,0,SP237-HH100,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_ON_SP237-HH150,NoSubset,ON_SP237-HH150,0,0,SP237-HH150,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_ON_SP277-HH100,NoSubset,ON_SP277-HH100,0,0,SP277-HH100,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_ON_SP277-HH150,NoSubset,ON_SP277-HH150,0,0,SP277-HH150,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_ON_SP321-HH100,NoSubset,ON_SP321-HH100,0,0,SP321-HH100,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_ON_SP321-HH150,NoSubset,ON_SP321-HH150,0,0,SP321-HH150,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_OFF_SP379-HH100,NoSubset,OFF_SP379-HH100,0,0,SP379-HH100,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_OFF_SP379-HH150,NoSubset,OFF_SP379-HH150,0,0,SP379-HH150,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_OFF_SP450-HH100,NoSubset,OFF_SP450-HH100,0,0,SP450-HH100,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_OFF_SP450-HH150,NoSubset,OFF_SP450-HH150,0,0,SP450-HH150,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+PU_Grid_in,Grid_buy,Electricity from the grid,0,0,Power_from_the_grid,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0
+Grid_out,Grid_sell,Curtailment,0,0,Curtailment,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0
+Stor_in,NoSubset,Charge batteries,0,0,Electricity_to_batteries,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,Based on Induspart2023,0,0,0,0,0,0,0,0,0
+Stor_out,NoSubset,Discharge batteries,0,0,Electricity_from_batteries,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,Based on Induspart2023,0,0,0,0,0,0,0,0,0
+Tank,NoSubset,Batteries,0,0,Electricity_stored,0,-,0,0,0,0,0,0,0,0,0,Based on communication with industrial partners,0.0,0.0,0,From Induspart2023 assuming low lithium price,1.5% Capex based on Induspart2023,0,0,0,"No CO2 formula here, check techno-eco file",0,0,0.0

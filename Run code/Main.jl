@@ -4,30 +4,47 @@ using JuMP, Gurobi, CSV, DataFrames
 
 #------------------------------Problem set up------------------------------------
 #Project name
-Project = "Base"
+Project = "NH3"
 # Folder name for all csv file
 all_csv_files = "All_results"
 # Folder paths for data acquisition and writing
-Main_folder = "C:/Users/njbca/Documents/Models/OptiPlant-World" ;
+Main_folder = "C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME" ;
 Profiles_folder = joinpath(Main_folder,Project,"Data","Profiles") ;
 Inputs_folder = joinpath(Main_folder,Project,"Data","Inputs") ; 
 Inputs_file = "DME_paper_data" #DME_paper_data" #"Bornholm_All_data" DME_paper_data
 
-# Scenario set (same name as exceel sheet)
+# Scenario set (same name as excel sheet)
 Scenarios_set =  "Scenarios_DME" ; include("ImportScenarios.jl") #"Scenarios_stoch"
 # Scenario under study (all between N_scen_0 and N_scen_end)
-N_scen_0 = 65 ; N_scen_end = N_scenarios # or N_scen_end = N_scenarios for total number of scenarios
+N_scen_0 = 1 ; N_scen_end = 4 # or N_scen_end = N_scenarios for total number of scenarios
 #Studied hours (max 8760). When there is maintenance hours are out
 #TMend = 4000-4876 : 90% time working ; T = 4000-4761 : 8000 hours
 #TMstart = 4675 ; TMend = 5036 ; Tfinish= 8736 #43848 52608 #Time maintenance starts/end ; Tbegin: Time within plants can operate at 0% load (in case of no renewable power the first 3 days)
 #Time = vcat(collect(1:TMstart),collect(TMend:Tfinish)) ; T = length(Time)
 #Tstart = vcat(collect(1:TMstart),collect(TMend:Tfinish)) ;
 
+#Studied hours (max 8760). When there is maintenance hours are out
+
+#TMend = 4000-4876 : 90% time working ; T = 4000-4761 : 8000 hours
+
+TMstart = 4675 ; TMend = 5011 ; Tbegin = 72 ; Tfinish=8760 #Time maintenance starts/end ; Tbegin: Time within plants can operate at 0% load (in case of no renewable power the first 3 days)
+
+Time = vcat(collect(1:TMstart),collect(TMend:Tfinish)) ; T = length(Time)
+
+Tstart = vcat(collect(1:TMstart),collect(TMend:Tfinish)) ;
+
+if Tbegin >= 2
+
+  splice!(Tstart,1:Tbegin) # Time within plants can operate at 0% load (in case of no renewable power the first 3 days)
+
+end
+
 Currency_factor = 1 # 1.12 for dollar 2019 #All input data are in Euro 2019
 
 # Number of step in the electrolyser piecewise linear optimisation
 N = 1
 
+#=
 #Change yearly demand target into periodic demand targets (weekly, monthly, etc...)
 Hours_per_period = 7884 #8424 with two weeks maintenance at the end of the year #7884 for 90% availability
 Numbers_of_period = 1
@@ -41,7 +58,7 @@ Tbegin = 72
 if Tbegin >= 2
   splice!(Tstart,1:Tbegin) # Time within plants can operate at 0% load (in case of no renewable power the first 3 days)
 end
-
+=#
 
 #--------------------- Main code -------------------------
 N_scen = N_scen_0
@@ -120,15 +137,14 @@ end
 
 #Demand constraint
 if Option_demand == true
-  
-  Demand_targets = zeros(1,Numbers_of_period)
-  for i = 1:1, p =1:Numbers_of_period
-    Demand_targets[i,p] = Demand[MinD[i]]/Numbers_of_period
-  end
+  #Demand_targets = zeros(1,Numbers_of_period)
+  #for i = 1:1, p =1:Numbers_of_period
+  #  Demand_targets[i,p] = Demand[MinD[i]]/Numbers_of_period
+  #end
   #Periodic demand 
-  @constraint(Model_LP_PW,[i=1:nMinD, p=1:Numbers_of_period], sum(Sold[MinD[i],t] for t in T_period[p] ) == Demand_targets[i,p])
+  #@constraint(Model_LP_PW,[i=1:nMinD, p=1:Numbers_of_period], sum(Sold[MinD[i],t] for t in T_period[p] ) == Demand_targets[i,p])
   #Yearly demand: have to fullfill min yearly demand if there is one
-  #@constraint(Model_LP_PW,[i in MinD], sum(Sold[i,t] for t in Time) == Demand[i])
+  @constraint(Model_LP_PW,[i in MinD], sum(Sold[i,t] for t in Time) == Demand[i])
 
   if Option_connection_limit == true
     #Hourly electricity/heat available: can't get electricity/heat from the grid when there is no excess production

@@ -18,6 +18,7 @@ Tank,NoSubset,H2 buried pipes,0,0,H2_stored_pipe,0,-,0,0,0,0,0,0,0,0,0,Based on 
 RPU_Solar_track,NoSubset,Solar tracking,0,0,Solar_tracking,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
 RPU_ON_SP198-HH100,NoSubset,ON_SP198-HH100,0,0,SP198-HH100,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
 RPU_ON_SP198-HH150,NoSubset,ON_SP198-HH150,0,0,SP198-HH150,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
+RPU_OFF_SP450-HH150,NoSubset,OFF_SP450-HH150,0,0,SP450-HH150,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,From Campion2021,From Campion2021,From Campion2021,0,0,0,0,0,0
 PU_Grid_in,Grid_buy,Electricity from the grid,0,0,Power_from_the_grid,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0.0
 Grid_out,Grid_sell,Curtailment,0,0,Curtailment,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,0,0,0,0,0,0,0,0,0,0
 Stor_in,NoSubset,Charge batteries,0,0,Electricity_to_batteries,0,-,0,0,0,0,0,0,0,0,0,0.0,0.0,0.0,Based on Induspart2023,0,0,0,0,0,0,0,0,0

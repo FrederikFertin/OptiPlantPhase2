@@ -1,0 +1,20 @@
+\begin{table}
+
+\caption{Economical inputs 2030}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{lllll}
+\toprule
+Type of units & Capacity & Investment & Fixed cost & Variable cost\\
+\midrule
+Units & - &  \officialeuro /Capacity installed &  \officialeuro /Capacity installed/y &  \officialeuro /Output\\
+MeOH plant CCU & kgMeOH/h & 17532 & 701.3\textsuperscript{1} & 0\textsuperscript{2}\\
+MeOH - Biogas - SOEC & kgMeOH/h & 15110.9 & 655.7\textsuperscript{3} & 0\textsuperscript{3}\\
+Wheat2-stage-SOEC & kgDME/h & 12113.8 & 1167\textsuperscript{4} & 0\textsuperscript{4}\\
+\bottomrule
+\multicolumn{5}{l}{\rule{0pt}{1em}\textsuperscript{1} For a medium-scale 13.3 t$\_{MeOH}$/h plant capacity based on \cite{MMZCS2023}.}\\
+\multicolumn{5}{l}{\rule{0pt}{1em}\textsuperscript{2} 4\% Capex based on \cite{MMZCS2023}.}\\
+\multicolumn{5}{l}{\rule{0pt}{1em}\textsuperscript{3} Based on \cite{Moioli2022} case 1b.}\\
+\multicolumn{5}{l}{\rule{0pt}{1em}\textsuperscript{4} From this study.}\\
+\end{tabular}}
+\end{table}

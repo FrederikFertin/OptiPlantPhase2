@@ -1,0 +1,24 @@
+Subsets,Subsets_2,Type of units,Parameters-->,Used (1 or 0),Unit tag,Yearly demand (kg fuel),Produced from,El balance,Heat balance,Process heat balance,H2 balance,CSP balance,Max Capacity,Fuel production rate (kg output/kg input),Heat generated (kWh/output),Process heat generated (kWh/output),Load min (% of max capacity),Ramp up (% of capacity /h),Ramp down (% of capacity /h),Electrical consumption (kWh/output),Investment (EUR/Capacity installed),Fixed cost (EUR/Capacity installed/y),Variable cost (EUR/Output),Fuel selling price (EUR/output),Fuel buying price (EUR/output),CO2e infrastructure (kg CO2e/Capacity/y),CO2e process (kg CO2e/output),Land use (m2/Capacity),Annuity factor
+0,0,0,Year-->,All,All,All,All,All,All,All,All,All,All,2030 best,2030 best,2030 best,2030 best,2030 best,2030 best,2030 best,2030 best,2030 best,2030 best,2030 best,2030 best,2030 best,2030 best,2030 best,2030 best
+0,0,0,0,Used (1 or 0)All,Unit tagAll,Yearly demand (kg fuel)All,Produced fromAll,El balanceAll,Heat balanceAll,Process heat balanceAll,H2 balanceAll,CSP balanceAll,Max CapacityAll,Fuel production rate (kg output/kg input)2030 best,Heat generated (kWh/output)2030 best,Process heat generated (kWh/output)2030 best,Load min (% of max capacity)2030 best,Ramp up (% of capacity /h)2030 best,Ramp down (% of capacity /h)2030 best,Electrical consumption (kWh/output)2030 best,Investment (EUR/Capacity installed)2030 best,Fixed cost (EUR/Capacity installed/y)2030 best,Variable cost (EUR/Output)2030 best,Fuel selling price (EUR/output)2030 best,Fuel buying price (EUR/output)2030 best,CO2e infrastructure (kg CO2e/Capacity/y)2030 best,CO2e process (kg CO2e/output)2030 best,Land use (m2/Capacity)2030 best,Annuity factor2030 best
+0,0,0,Line/Column index,1,2,3,4,5,6,7,8,9,10,16,26,36,46,56,66,76,86,96,106,116,126,136,146,156,166
+Product,Min_demand_MainFuel,NH3 plant + ASU - SOEC,14,1,NH3-SOEC,4.2580645161290324e8,Reactant9,0,1,0,0,0,20000,5.555555555555555,0,0,0.1,1.0,1.0,0.59,6662.16,266.4864,0,0,0,0,0,0,0.08849557522123894
+Reactant11,NoSubset,Waste water plant,17,1,H2O wwtp,0,-,0,0,0,0,0,400000,0,0,0,0.0,1.0,1.0,0.001,107.55232,3.2265696,0,0,0,0,0,0,0.11682954493601999
+Product/Reactant3,PWL,Electrolysers SOEC heat integrated,20,1,H2_from_SOEC_HI,0,Reactant11,0,1,0,1,0,20000,0.08888888888888889,0,0,0.0,1.0,1.0,37.9,39583.97811177662,3384.4301285569013,0,0,0,0,0,15.936,0.08849557522123894
+Reactant9,NoSubset,H2 pipeline to NH3 plant,29,1,H2_pipeline_to_NH3_plant,0,-,0,0,0,-1,0,20000,0,0,0,0.0,1.0,1.0,0,0,0,0,0,0,0,0,0,0
+Heat_in,Heat_buy,Heat from district heating,31,1,Heat_import,0,-,0,1,0,0,0,2000000,0,0,0,0.0,1.0,1.0,0,0,0,0,0,0,0,0,0,0
+Heat_out,Heat_sell,Heat sent to district heating,32,1,Heat_export,0,-,0,-1,0,0,0,2000000,0,1,0,0.0,1.0,1.0,0,0,0,0,0.0335,0,0,0,0,0
+NoSubset,Process_heat_sell,Heat sent to other process,33,1,Heat_export_process,0,-,0,0,-1,0,0,2000000,0,0,1,0.0,1.0,1.0,0,0,0,0,0.067,0,1,1,0,0
+Product,O2_sell,Sale of oxygen,34,1,O2,0,Product/Reactant3,0,0,0,0,0,180000,8,0,0,0.0,1.0,1.0,0,0,0,0,0.15,0,0,0,0,0
+Stor_in,NoSubset,H2 pipes compressor,38,1,H2_to_pipe,0,-,0,0,0,-1,0,20000,0,0,0,0.0,1.0,1.0,0.94,0,0,0,0,0,0,0,0,0.09367877905196811
+Stor_out,NoSubset,H2 pipes valve,39,1,H2_from_pipe,0,-,0,0,0,1,0,20000,0,0,0,0.0,1.0,1.0,0,0,0,0,0,0,0,0,0,0
+Tank,NoSubset,H2 buried pipes,40,1,H2_stored_pipe,0,-,0,0,0,0,0,20000000,0,0,0,0.09,1.0,1.0,0,250,7.5,0,0,0,0,0,0,0.08174285816161557
+RPU_OFF_SP379-HH100,NoSubset,OFF_SP379-HH100,51,1,SP379-HH100,0,-,1,0,0,0,0,2000000,0,0,0,0.0,1.0,1.0,0,1998.1303119546053,37.595707870000005,0.002815533,0,0,0,0,0,0.08882743338727227
+RPU_OFF_SP379-HH150,NoSubset,OFF_SP379-HH150,52,1,SP379-HH150,0,-,1,0,0,0,0,2000000,0,0,0,0.0,1.0,1.0,0,2296.6158904916497,37.595707870000005,0.002815533,0,0,0,0,0,0.08882743338727227
+RPU_OFF_SP450-HH100,NoSubset,OFF_SP450-HH100,53,1,SP450-HH100,0,-,1,0,0,0,0,2000000,0,0,0,0.0,1.0,1.0,0,1801.4452222473265,37.595707870000005,0.002815533,0,0,0,0,0,0.08882743338727227
+RPU_OFF_SP450-HH150,NoSubset,OFF_SP450-HH150,54,1,SP450-HH150,0,-,1,0,0,0,0,2000000,0,0,0,0.0,1.0,1.0,0,2052.8014989101002,37.595707870000005,0.002815533,0,0,0,0,0,0.08882743338727227
+PU_Grid_in,Grid_buy,Electricity from the grid,60,0.0,Power_from_the_grid,0,-,1,0,0,0,0,2000000,0,0,0,0.0,1.0,1.0,0,180,0,0,0,0.016649999999999998,0,0,0,0.08882743338727227
+Grid_out,Grid_sell,Curtailment,61,1,Curtailment,0,-,-1,0,0,0,0,24000,0,0,0,0.0,1.0,1.0,0,0,0,0,0,0,0,0,0,0
+Stor_in,NoSubset,Charge batteries,63,1,Electricity_to_batteries,0,-,-1,0,0,0,0,10000000,0,0,0,0.0,1.0,1.0,0.05,0,0,0,0,0,0,0,0,0
+Stor_out,NoSubset,Discharge batteries,64,1,Electricity_from_batteries,0,-,1,0,0,0,0,60000000,0,0,0,0.0,1.0,1.0,0.05,0,0,0,0,0,0,0,0,0
+Tank,NoSubset,Batteries,65,1,Electricity_stored,0,-,0,0,0,0,0,20000000,0,0,0,0.0,1.0,1.0,0,148,1.48,0,0,0,0,0,0,0.10185220882315059

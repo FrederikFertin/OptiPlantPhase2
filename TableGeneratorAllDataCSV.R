@@ -17,10 +17,10 @@ library(openxlsx)
 ################################ Inputs needed  ################################ 
 ######################## Change this for the data needed #######################
 #------------------------------------------------------------------------------# 
-
+project <- 'MeOH'
 #Insert directory of the files:
-Directory <- 'C:/Users/njbca/Documents/Models/OptiPlant-World/Base/Data/Inputs';
-DirectoryBiblio <- 'C:/Users/njbca/Documents/Models/OptiPlant-World/Base/Data/Inputs';
+Directory <- str('C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/', project, '/Data/Inputs');
+DirectoryBiblio <- str('C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME');
 
 #Insert excel file name:
 Filename <- "DME_paper_data.xlsx";

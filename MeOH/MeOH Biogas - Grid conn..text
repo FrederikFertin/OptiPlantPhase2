@@ -1,0 +1,22 @@
+\begin{table}
+
+\caption{Scenario MeOH Biogas - Grid conn.}
+\centering
+\resizebox{\linewidth}{!}{
+\begin{tabular}[t]{lllllll}
+\toprule
+Type of unit & Installed capacity(MW or t/h) & Total investment(MEuros) & Annualised investment(MEuros) & Production(kton or GWh) & Electricity consumption(GWh) & Av electricity cost(Euros/MWh)\\
+\midrule
+MeOH - Biogas - SOEC & 3.7138508 & 56.1196550 & 4.9663412 & 29.2800000 & 0.000000 & 44.2389\\
+Biogas w H\textsubscript{2} & 4.6676814 & 0.0000000 & 0.0000000 & 36.8000000 & 0.000000 & 44.2389\\
+Waste water plant & 1.6029853 & 0.1724048 & 0.0201420 & 12.5007837 & 0.031252 & 44.2389\\
+Electrolysers SOEC alone & 0.1424876 & 5.6402254 & 0.4991350 & 1.1111808 & 48.003009 & 44.2389\\
+H\textsubscript{2} storage buried pipes & 0.2035750 & 0.0508938 & 0.0041602 & 0.9048453 & 0.000000 & 44.2389\\
+\addlinespace
+Solar tracking & 8.7018740 & 3.9926600 & 0.3348251 & 13.7390844 & 0.000000 & 44.2389\\
+OFF\_SP450-HH150 & 0.0000000 & 0.0000000 & 0.0000000 & 0.0000000 & 0.000000 & 44.2389\\
+Electricity from the grid & 6.1609268 & 1.1089668 & 0.0985067 & 34.6868694 & 0.000000 & 44.2389\\
+Curtailment & 1.5228280 & 0.0000000 & 0.0000000 & 0.3813944 & 0.000000 & 44.2389\\
+\bottomrule
+\end{tabular}}
+\end{table}
