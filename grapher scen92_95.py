@@ -15,7 +15,7 @@ grid = 0
 ren_crit = 0
 
 # Check if the files exist
-scen = ((["99", "100", "101", "102"] if grid else ["95", "96", "97", "98"]) if fuel == "MeOH" else ["4", "5", "6"])
+scen = ((["99", "100", "101", "102"] if grid else ["95", "110", "97", "98"]) if fuel == "MeOH" else ["4", "5", "6"])
 if grid and ren_crit: scen = ["103", "104", "105", "106"]
 
 files = []
@@ -90,6 +90,7 @@ elif fuel == "DME":
              "Biomass bamboo 1",
              "Biomass wheat 2",
              "Biomass wheat 1",
+             "Sale of biochar",
              "Desalination plant",
              "Electrolysers SOEC heat integrated",
              "H2 buried pipes",

@@ -35,6 +35,8 @@ worst_scen = ["16", "17", "18"]
 tank_scen = ["19", "20", "21"]
 nStore_scen = ["22", "23", "24"]
 nStoreFlex_scen = ["49", "50", "51"]
+hgp = ["52", "53", "54"]
+lgp = ["55", "56", "57"]
 
 def createPathList(scen, all_names):
     ll = []
@@ -44,11 +46,15 @@ def createPathList(scen, all_names):
     all_names.append(ll)
     return ll, all_names
 
-
+#%%
 all_names = []
 base, all_names = createPathList(scen, all_names)
 
 grids, all_names = createPathList(grid_scen, all_names)
+
+hgps, all_names = createPathList(hgp, all_names)
+
+lgps, all_names = createPathList(lgp, all_names)
 
 flexs, all_names = createPathList(flex_scen, all_names)
 
@@ -126,11 +132,14 @@ if AEC_only:
         df.loc[df.index==name,'Case'] =\
             scen['Scenario'].iloc[0]
     dd = df['Case'].values
-    dd[1] = 'Semi-islanded (Grid)'
-    dd[2] = 'Flex (0% min. load)'
-    dd[3] = 'Non-flex (40% min. load)'
+    dd[1] = 'Semi-islanded (2020 grid prices)'
+    dd[2] = 'Semi-islanded (2030 grid prices - \n High Gas Price)'
+    dd[3] = 'Semi-islanded (2030 grid prices - \n Low Gas Price)'
+    dd[4] = 'Flex (0% min. load)'
+    dd[5] = 'Non-flex (40% min. load)'
     df['Descriptions'] = dd
 
+#%% Visualizations
 #All electrolyzer technologies
 plt.figure(figsize=(12, 7))
 plt.grid(axis='y')
@@ -139,6 +148,7 @@ plt.title('Production costs given different assumptions')
 plt.legend(loc='upper left',bbox_to_anchor=(1,1)) # Moved the legend to the right side
 plt.show()
 
+#%%
 
 plt.figure(figsize=(12, 7))
 plt.grid(axis='y')
@@ -147,6 +157,8 @@ plt.title('Production costs given different assumptions')
 plt.legend(loc='upper left',bbox_to_anchor=(1,1)) # Moved the legend to the right side
 plt.show()
 
+
+#%%
 dfs = df.copy()
 if AEC_only:
     dfs['Cost difference (%)'] = (dfs['Production cost (€/kg)']-dfs['Production cost (€/kg)'].iloc[0])/dfs['Production cost (€/kg)'].iloc[0]*100
@@ -157,31 +169,31 @@ else:
 
 plt.figure(figsize=(12, 7))
 plt.grid(axis='y')
-sns.barplot(x='Cost difference (%)',y='Case',estimator=np.mean,errwidth=1,data=dfs,orient="h",palette=sns.color_palette()[1:])
+sns.barplot(x='Cost difference (%)',y='Case',estimator=np.mean,errwidth=1,data=dfs.iloc[:3,:],orient="h",palette=sns.color_palette()[1:])
 plt.axvline(x=0,color=sns.color_palette()[0],label='Base case cost')
-plt.title('Production cost sensitivity to plant specifications')
+plt.title('Production cost sensitivity - power source')
 plt.legend(loc='upper right') # Moved the legend to the right side
 plt.grid(axis='x')
 plt.show()
 
-
+#%%
 f_cases = [v for v in cases if 'lex' in v]
 flexibility = pd.DataFrame(columns=['Production cost (Euros/kg)', 'Electrolyser'],index=f_cases)
 
-plt.barh(df['Case'],df['Production cost (€/kg)'],alpha=0.2)
+#plt.barh(df['Case'],df['Production cost (€/kg)'],alpha=0.2)
 
 #SOEC absolute values
 intervals = {}
 c = fuel_costs_SOEC['Base case']
 
 flex = [fuel_costs_SOEC['Non-flex']-c,fuel_costs_SOEC['Flex']-c]
-tot = [fuel_costs_SOEC['Worst case']-c,fuel_costs_SOEC['Best case']-c]
-grid = [fuel_costs_SOEC['Semi-islanded']-c]
+#tot = [fuel_costs_SOEC['Worst case']-c,fuel_costs_SOEC['Best case']-c]
+grid_costs = [fuel_costs_SOEC['Semi-islanded']-c,fuel_costs_SOEC['Semi-islanded-hgp']-c,fuel_costs_SOEC['Semi-islanded-lgp']-c]
 storage = [fuel_costs_SOEC['H2 tank']-c,fuel_costs_SOEC['No H2 storage']-c]
 
 intervals['NH3 plant flexibility'] = flex
-intervals['Plant benchmarking'] = tot
-intervals['Power source (grid)'] = grid
+#intervals['Plant benchmarking'] = tot
+intervals['Power source (grid)'] = grid_costs
 intervals['Storage type'] = storage
 
 fig, ax = plt.subplots(figsize=(12, 7))
@@ -193,17 +205,18 @@ plt.ylabel('Model component')
 plt.title('SOEC sensitivity to model assumptions')
 plt.show()
 
+#%%
 #SOEC relative values
 intervals = {}
 c = fuel_costs_SOEC['Base case']
 
 flex = [(fuel_costs_SOEC['Non-flex']-c)/c,(fuel_costs_SOEC['Flex']-c)/c]
-tot = [(fuel_costs_SOEC['Worst case']-c)/c,(fuel_costs_SOEC['Best case']-c)/c]
+#tot = [(fuel_costs_SOEC['Worst case']-c)/c,(fuel_costs_SOEC['Best case']-c)/c]
 grid = [(fuel_costs_SOEC['Semi-islanded']-c)/c]
 storage = [(fuel_costs_SOEC['H2 tank']-c)/c,(fuel_costs_SOEC['No H2 storage']-c)/c]
 
 intervals['NH3 plant flexibility'] = flex
-intervals['Plant benchmarking'] = tot
+#intervals['Plant benchmarking'] = tot
 intervals['Power source (grid)'] = grid
 intervals['Storage type'] = storage
 
@@ -217,5 +230,6 @@ plt.title('SOEC sensitivity to model assumptions')
 plt.legend()
 plt.show()
 
+#%%
 
 
