@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 #from tabulate import tabulate
 import numpy as np
 import seaborn as sns
-from colour import Color
+#from colour import Color
+import os
 # Set the global font size
 plt.rcParams.update({'font.size': 13})
 # Define the colors for each bar
@@ -13,9 +14,11 @@ colors = ["green", "cyan", "lime", "pink", "darkblue", "purple","darkblue","red"
 scenarios = ["MA OFF", "MA ON", "CL OFF", "CL ON", "AU OFF", "AU ON", "Esbjerg", "Bornholm"]
 scen = np.arange(2,10)
 
+cwd = os.getcwd()
+
 files = []
 for i in scen:
-    files.append(str("C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/NH3 - locations/Results/Results_DME/Main results/Scenario_" + str(i) + ".csv"))
+    files.append(str(cwd + "/NH3 - locations/Results/Results_DME/Main results/Scenario_" + str(i) + ".csv"))
 
 data = []
 for f in files:

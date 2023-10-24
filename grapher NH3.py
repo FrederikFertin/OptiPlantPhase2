@@ -2,6 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 #from tabulate import tabulate
 import numpy as np
+import os
 
 # Set the global font size
 plt.rcParams.update({'font.size': 13})
@@ -54,9 +55,11 @@ if ceduna_all: scen = ["43", "44", "45"]; plot_title = "Islanded onshore NH3 pro
 if esbjerg_off: scen = ["46", "47", "48"]; plot_title = "Islanded offshore NH3 production in Esbjerg, Denmark";
 
 
+cwd = os.getcwd()
+
 files = []
 for i in scen:
-    files.append(str("C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/NH3/Results/Results_DME/Main results/Scenario_" + i + ".csv"))
+    files.append(str(cwd + "/NH3/Results/Results_DME/Main results/Scenario_" + i + ".csv"))
 #C:\Users\Frede\Documents\DTU\DTU_Man\OptiPlant-DME\MeOH\Results\Results_DME\Main results
 #%% Data handling
 unit_mask = 'Type of unit'
