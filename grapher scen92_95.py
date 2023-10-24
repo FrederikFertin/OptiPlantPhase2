@@ -18,9 +18,11 @@ ren_crit = 0
 scen = ((["99", "100", "101", "102"] if grid else ["95", "110", "97", "98"]) if fuel == "MeOH" else ["4", "5", "6"])
 if grid and ren_crit: scen = ["103", "104", "105", "106"]
 
+cwd = os.getcwd()
+
 files = []
 for i in scen:
-    files.append(str("C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/MeOH/Results/Results_DME/Main results/Scenario_" + i + ".csv"))
+    files.append(str(cwd + "/MeOH/Results/Results_DME/Main results/Scenario_" + i + ".csv"))
 #C:\Users\Frede\Documents\DTU\DTU_Man\OptiPlant-DME\MeOH\Results\Results_DME\Main results
 #%% Data handling
 unit_mask = 'Type of unit'

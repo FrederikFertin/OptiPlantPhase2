@@ -4,6 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import seaborn as sns
 from colour import Color
+import os
 # Set the global font size
 plt.rcParams.update({'font.size': 13})
 # Define the colors for each bar
@@ -98,9 +99,11 @@ scenarios = ["Base Case",
              "High biochar value"]
 scen = np.arange(4,9)
 
+cwd = os.getcwd()
+
 files = []
 for i in scen:
-    files.append(str("C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/MeOH/Results/Results_DME/Main results/Scenario_" + str(i) + ".csv"))
+    files.append(str(cwd + "/MeOH/Results/Results_DME/Main results/Scenario_" + str(i) + ".csv"))
 
 data = []
 for f in files:
