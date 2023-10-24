@@ -134,12 +134,12 @@ colors=['purple', 'lime', 'orange', 'cyan', 'brown','pink','green', 'darkgreen',
 plotSpecCosts(chosen_data,chosen_scen,colors=colors)
 
 #%% Choice of scenarios
-choice = [0,1,2,5,6]
+choice = [0,1,2,3,4]
 chosen_data = [data[i] for i in choice]
 chosen_scen = [scenarios[i] for i in choice]
 
 #Define color list to properly represent units
-colors=['purple', 'lime', 'orange', 'cyan', 'brown','pink','green', 'darkgreen', 'darkblue', 'mediumblue', 'red', 'yellow', 'cyan' ]
+colors=['purple', 'lime', 'orange', 'cyan', 'brown','pink','green', 'darkgreen', 'darkblue', 'mediumblue',  'yellow', 'cyan' ]
 plotSpecCosts(chosen_data,chosen_scen,colors=colors)
 
 #%% Choice of scenarios
