@@ -182,7 +182,7 @@ else:
 
 
 
-#%%
+
 
 cols = ['Type of unit',
         'Annualised investment(MEuros)',
@@ -202,7 +202,7 @@ for f in files:
 a_cost = []
 e_cost = []
 for i,d in enumerate(data):
-    data[i] = d[pd.DataFrame(d[unit_mask].tolist()).isin(units).values][cols]
+    data[i] = d[pd.DataFrame(d[unit_mask].tolist()).isin(units).any(1).values][cols]
     a_cost.append(data[i][cols[3]])
     # Unit of biogas cost is in M€:
     if grid and 0: # Unit of electricity cost is in M€:

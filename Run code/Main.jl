@@ -3,8 +3,13 @@ using JuMP, Gurobi, CSV, DataFrames
 #Open julia terminal: Alt J Alt O 
 
 #------------------------------Problem set up------------------------------------
+<<<<<<< HEAD
 #Project name!
 Project = "MeOH"
+=======
+#Project name
+Project = "NH3"
+>>>>>>> 2210b3d2bdfdc4495032e1369a32c8ef9ed84d9d
 # Folder name for all csv file
 all_csv_files = "All_results"
 # Folder paths for data acquisition and writing
@@ -16,7 +21,7 @@ Inputs_file = "DME_paper_data" #DME_paper_data" #"Bornholm_All_data" DME_paper_d
 # Scenario set (same name as excel sheet)
 Scenarios_set =  "Scenarios_DME" ; include("ImportScenarios.jl") #"Scenarios_stoch"
 # Scenario under study (all between N_scen_0 and N_scen_end)
-N_scen_0 = 12 ; N_scen_end = 24 # or N_scen_end = N_scenarios for total number of scenarios
+N_scen_0 = 1 ; N_scen_end = 4 # or N_scen_end = N_scenarios for total number of scenarios
 #Studied hours (max 8760). When there is maintenance hours are out
 #TMend = 4000-4876 : 90% time working ; T = 4000-4761 : 8000 hours
 #TMstart = 4675 ; TMend = 5036 ; Tfinish= 8736 #43848 52608 #Time maintenance starts/end ; Tbegin: Time within plants can operate at 0% load (in case of no renewable power the first 3 days)
@@ -64,7 +69,7 @@ end
 N_scen = N_scen_0
 
 while N_scen < N_scen_end + 1 #Run the optimization model for all scenarios
-println("Current scenario: ", N_scen)
+
 include("ImportData.jl") # Import data
 Flows_result_folder = joinpath(Main_folder,Project,"Results",csv_files,"Hourly results","Flows") ; mkpath(Flows_result_folder)
 Sold_result_folder = joinpath(Main_folder,Project,"Results",csv_files,"Hourly results","Sold") ; mkpath(Sold_result_folder)

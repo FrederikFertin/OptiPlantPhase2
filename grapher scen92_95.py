@@ -10,12 +10,12 @@ plt.rcParams.update({'font.size': 13})
 ### Fuel Choice:
 # "MeOH"
 # "DME"
-fuel = "MeOH"
+fuel = "DME"
 grid = 0
 ren_crit = 0
 
 # Check if the files exist
-scen = ((["99", "100", "101", "102"] if grid else ["95", "96", "97", "98"]) if fuel == "MeOH" else ["4", "5", "6"])
+scen = ((["99", "100", "101", "102"] if grid else ["95", "110", "97", "98"]) if fuel == "MeOH" else ["4", "5", "6"])
 if grid and ren_crit: scen = ["103", "104", "105", "106"]
 
 cwd = os.getcwd()
