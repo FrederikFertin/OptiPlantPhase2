@@ -3,7 +3,7 @@ using JuMP, Gurobi, CSV, DataFrames
 #Open julia terminal: Alt J Alt O 
 
 #------------------------------Problem set up------------------------------------
-#Project name
+#Project name!
 Project = "MeOH"
 # Folder name for all csv file
 all_csv_files = "All_results"
