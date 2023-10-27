@@ -3,14 +3,13 @@ import matplotlib.pyplot as plt
 #from tabulate import tabulate
 import numpy as np
 import seaborn as sns
-from colour import Color
 # Set the global font size
 plt.rcParams.update({'font.size': 13})
 # Define the colors for each bar
 colors = ["green", "cyan", "lime", "pink", "darkblue", "purple","darkblue","red", "gray", "purple",  "orange"]
 
 #%% Functions
-def plotSpecCosts(data,scenarios,colors=sns.color_palette()):
+def plotSpecCosts(data,scenarios,colors=sns.color_palette(),rot=0):
     p_cost = []
     for d in data:
         p_cost.append(
@@ -66,7 +65,7 @@ def plotSpecCosts(data,scenarios,colors=sns.color_palette()):
     plt.grid(axis='y')
     plt.ylabel('Annualized costs [M€/yr]')
     plt.xlabel('Locations')
-    plt.xticks(rotation=90)
+    plt.xticks(rotation=rot)
     plt.title('DME production costs in each scenario')
     plt.legend(loc='upper left',bbox_to_anchor=(1,1))
     plt.ylim(min(np.min(df2,axis=1))*3,max(np.sum(df2,axis=1))*1.3)
@@ -84,81 +83,51 @@ def plotProdCost(data,scenarios,colors=sns.color_palette()):
     df_p['Locations'] = scenarios
     plt.figure(figsize=(12, 7))
     sns.barplot(y=df_p.columns[0],x='Locations',data=df_p,palette=colors)
-    plt.xticks(rotation=45)
+    plt.xticks(rotation=70)
     plt.grid(axis='y')
     #plt.axhline(y=p_cost[-1],color='gray',label='Base case cost')
     plt.show()
 
 #%%
 # Check if the files exist
-scenarios = ["Base Case",
-             "Low straw price",
-             "High straw price",
-             "Without \nbyproduct sale",
-             "High biochar value"]
-scen = np.arange(4,9)
+scen = np.arange(1,26)
 
 files = []
 for i in scen:
     files.append(str("C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/MeOH/Results/Results_DME/Main results/Scenario_" + str(i) + ".csv"))
 
 data = []
+scenarios = []
 for f in files:
     data.append(pd.read_csv(f))
+    scenarios.append(data[-1]['Scenario'].iloc[0])
 
+colors = sns.color_palette()
 
+# Plot all scenarios loaded (not representable)
+#plotSpecCosts(data,scenarios,colors=colors)
+plotProdCost(data,scenarios)
 
-#plotProdCost(data,scenarios,colors=['darkblue','lightgreen','darkblue','lightgreen','darkblue','lightgreen','darkblue','darkblue'])
-#plotProdCost(best_data,best_scen)
-
-#%% Plot all scenarios loaded (not representable)
-#Define color list to properly represent units
-choice = [0,3,1,2,4]
+#%% All base case methanol/DME pathways without byproduct sale
+# Define color list to properly represent units
+choice = [4,5,9,24]
+rotation = 0
 chosen_data = [data[i] for i in choice]
 chosen_scen = [scenarios[i] for i in choice]
+chosen_scen = ["DME","MeOH\nonly biogas","MeOH\nBiogas & H2","MeOH\nWood"]
+colors=['purple','lime','lime','orange','peru', 'brown', 'saddlebrown', 'pink',
+        'grey', 'dimgrey', 'green', 'darkgreen', 'yellowgreen', 'darkblue',
+        'midnightblue', 'lightcoral', 'yellow', 'cyan', 'forestgreen']
+#plotSpecCosts(data,scenarios,colors=colors)
+plotSpecCosts(chosen_data,chosen_scen,colors=colors,rot=rotation)
+
+#%% All base case methanol/DME pathways without byproduct sale
+#Define color list to properly represent units
+choice = [4,5,9,24]
+rotation = 0
+chosen_data = [data[i] for i in choice]
+chosen_scen = [scenarios[i] for i in choice]
+chosen_scen = ["DME","MeOH\nonly biogas","MeOH\nBiogas & H2","MeOH\nWood"]
 colors=['purple', 'lime', 'brown','pink','grey', 'dimgrey', 'darkblue', 'lightcoral', 'yellow', 'cyan', 'green' ]
-plotSpecCosts(data,scenarios,colors=colors)
-#%% Choice of scenarios
-choice = [0,1,2,3,4,5,6]
-chosen_data = [data[i] for i in choice]
-chosen_scen = [scenarios[i] for i in choice]
-
-#Define color list to properly represent units
-colors=['purple', 'lime', 'orange', 'cyan', 'brown','pink','green', 'darkgreen', 'darkblue', 'mediumblue', 'red', 'yellow', 'cyan' ]
-plotSpecCosts(chosen_data,chosen_scen,colors=colors)
-
-#%% Choice of scenarios
-choice = [0,1,2,3,4]
-chosen_data = [data[i] for i in choice]
-chosen_scen = [scenarios[i] for i in choice]
-
-#Define color list to properly represent units
-colors=['purple', 'lime', 'orange', 'cyan', 'brown','pink','green', 'darkgreen', 'darkblue', 'mediumblue',  'yellow', 'cyan' ]
-plotSpecCosts(chosen_data,chosen_scen,colors=colors)
-
-#%% Choice of scenarios
-choice = [0,1,2,5,6,7,8]
-chosen_data = [data[i] for i in choice]
-chosen_scen = [scenarios[i] for i in choice]
-
-#Define color list to properly represent units
-colors=['purple', 'lawngreen', 'lime', 'orange', 'cyan', 'brown','pink','grey','green', 'forestgreen', 'darkgreen', 'darkblue', 'mediumblue', 'red', 'yellow', 'cyan' ]
-plotSpecCosts(chosen_data,chosen_scen,colors=colors)
-
-#%% Choice of scenarios
-choice = [0,1,2,9,10]
-chosen_data = [data[i] for i in choice]
-chosen_scen = [scenarios[i] for i in choice]
-
-#Define color list to properly represent units
-colors=['purple', 'orange', 'cyan', 'brown','pink','green', 'darkblue','midnightblue', 'mediumblue', 'yellow' ]
-plotSpecCosts(chosen_data,chosen_scen,colors=colors)
-
-#%% Choice of scenarios
-choice = [9,10,11,12]
-chosen_data = [data[i] for i in choice]
-chosen_scen = [scenarios[i] for i in choice]
-
-#Define color list to properly represent units
-colors=['purple', 'orange', 'cyan', 'brown','pink','grey','green', 'darkblue','midnightblue', 'red', 'yellow', 'cyan' ]
-plotSpecCosts(chosen_data,chosen_scen,colors=colors)
+#plotSpecCosts(data,scenarios,colors=colors)
+plotSpecCosts(chosen_data,chosen_scen,colors=colors,rot=rotation)
