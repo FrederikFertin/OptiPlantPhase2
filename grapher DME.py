@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 #from tabulate import tabulate
 import numpy as np
 import seaborn as sns
-from colour import Color
 import os
 # Set the global font size
 plt.rcParams.update({'font.size': 13})
@@ -92,12 +91,7 @@ def plotProdCost(data,scenarios,colors=sns.color_palette()):
 
 #%%
 # Check if the files exist
-scenarios = ["Base Case",
-             "Low straw price",
-             "High straw price",
-             "Without \nbyproduct sale",
-             "High biochar value"]
-scen = np.arange(4,9)
+scen = np.arange(1,26)
 
 cwd = os.getcwd()
 
@@ -130,29 +124,20 @@ chosen_scen = [scenarios[i] for i in choice]
 colors=['purple', 'lime', 'orange', 'cyan', 'brown','pink','green', 'darkgreen', 'darkblue', 'mediumblue', 'red', 'yellow', 'cyan' ]
 plotSpecCosts(chosen_data,chosen_scen,colors=colors)
 
-#%% Choice of scenarios
-choice = [0,1,2,3,4]
+#%% All base case methanol/DME pathways without byproduct sale
+# Define color list to properly represent units
+choice = [3,5,9,24]
+rotation = 0
 chosen_data = [data[i] for i in choice]
 chosen_scen = [scenarios[i] for i in choice]
+chosen_scen = ["DME","MeOH\nonly biogas","MeOH\nBiogas & H2","MeOH\nWood"]
+colors=['purple','lime','lime','orange','peru', 'brown', 'saddlebrown', 'pink',
+        'grey', 'green', 'darkgreen', 'yellowgreen', 'darkblue',
+        'midnightblue', 'yellow', 'cyan', 'forestgreen']
+#plotSpecCosts(data,scenarios,colors=colors)
+plotSpecCosts(chosen_data,chosen_scen,colors=colors,rot=rotation)
 
-#Define color list to properly represent units
-colors=['purple', 'lime', 'orange', 'cyan', 'brown','pink','green', 'darkgreen', 'darkblue', 'mediumblue',  'yellow', 'cyan' ]
-plotSpecCosts(chosen_data,chosen_scen,colors=colors)
-
-#%% Choice of scenarios
-choice = [0,1,2,5,6,7,8]
-chosen_data = [data[i] for i in choice]
-chosen_scen = [scenarios[i] for i in choice]
-
-#Define color list to properly represent units
-colors=['purple', 'lawngreen', 'lime', 'orange', 'cyan', 'brown','pink','grey','green', 'forestgreen', 'darkgreen', 'darkblue', 'mediumblue', 'red', 'yellow', 'cyan' ]
-plotSpecCosts(chosen_data,chosen_scen,colors=colors)
-
-#%% Choice of scenarios
-choice = [0,1,2,9,10]
-chosen_data = [data[i] for i in choice]
-chosen_scen = [scenarios[i] for i in choice]
-
+#%% All base case methanol/DME pathways without byproduct sale
 #Define color list to properly represent units
 colors=['purple', 'orange', 'cyan', 'brown','pink','green', 'darkblue','midnightblue', 'mediumblue', 'yellow' ]
 plotSpecCosts(chosen_data,chosen_scen,colors=colors)
@@ -161,7 +146,8 @@ plotSpecCosts(chosen_data,chosen_scen,colors=colors)
 choice = [9,10,11,12]
 chosen_data = [data[i] for i in choice]
 chosen_scen = [scenarios[i] for i in choice]
-
-#Define color list to properly represent units
-colors=['purple', 'orange', 'cyan', 'brown','pink','grey','green', 'darkblue','midnightblue', 'red', 'yellow', 'cyan' ]
-plotSpecCosts(chosen_data,chosen_scen,colors=colors)
+chosen_scen = ["DME","MeOH\nonly biogas","MeOH\nBiogas & H2","MeOH\nWood"]
+colors=['purple','lime','lime','orange','peru', 'brown', 'saddlebrown', 'pink',
+        'grey', 'dimgrey', 'green', 'darkgreen', 'yellowgreen', 'darkblue',
+        'midnightblue', 'lightcoral', 'yellow', 'cyan', 'forestgreen']#plotSpecCosts(data,scenarios,colors=colors)
+plotSpecCosts(chosen_data,chosen_scen,colors=colors,rot=rotation)
