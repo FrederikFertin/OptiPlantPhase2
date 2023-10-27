@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 #from tabulate import tabulate
 import numpy as np
 import seaborn as sns
+import os
 # Set the global font size
 plt.rcParams.update({'font.size': 13})
 # Define the colors for each bar
@@ -92,9 +93,11 @@ def plotProdCost(data,scenarios,colors=sns.color_palette()):
 # Check if the files exist
 scen = np.arange(1,26)
 
+cwd = os.getcwd()
+
 files = []
 for i in scen:
-    files.append(str("C:/Users/Frede/Documents/DTU/DTU_Man/OptiPlant-DME/MeOH/Results/Results_DME/Main results/Scenario_" + str(i) + ".csv"))
+    files.append(str(cwd + "/MeOH/Results/Results_DME/Main results/Scenario_" + str(i) + ".csv"))
 
 data = []
 scenarios = []
@@ -110,14 +113,14 @@ plotProdCost(data,scenarios)
 
 #%% All base case methanol/DME pathways without byproduct sale
 # Define color list to properly represent units
-choice = [4,5,9,24]
+choice = [3,5,9,24]
 rotation = 0
 chosen_data = [data[i] for i in choice]
 chosen_scen = [scenarios[i] for i in choice]
 chosen_scen = ["DME","MeOH\nonly biogas","MeOH\nBiogas & H2","MeOH\nWood"]
 colors=['purple','lime','lime','orange','peru', 'brown', 'saddlebrown', 'pink',
-        'grey', 'dimgrey', 'green', 'darkgreen', 'yellowgreen', 'darkblue',
-        'midnightblue', 'lightcoral', 'yellow', 'cyan', 'forestgreen']
+        'grey', 'green', 'darkgreen', 'yellowgreen', 'darkblue',
+        'midnightblue', 'yellow', 'cyan', 'forestgreen']
 #plotSpecCosts(data,scenarios,colors=colors)
 plotSpecCosts(chosen_data,chosen_scen,colors=colors,rot=rotation)
 
@@ -128,6 +131,7 @@ rotation = 0
 chosen_data = [data[i] for i in choice]
 chosen_scen = [scenarios[i] for i in choice]
 chosen_scen = ["DME","MeOH\nonly biogas","MeOH\nBiogas & H2","MeOH\nWood"]
-colors=['purple', 'lime', 'brown','pink','grey', 'dimgrey', 'darkblue', 'lightcoral', 'yellow', 'cyan', 'green' ]
-#plotSpecCosts(data,scenarios,colors=colors)
+colors=['purple','lime','lime','orange','peru', 'brown', 'saddlebrown', 'pink',
+        'grey', 'dimgrey', 'green', 'darkgreen', 'yellowgreen', 'darkblue',
+        'midnightblue', 'lightcoral', 'yellow', 'cyan', 'forestgreen']#plotSpecCosts(data,scenarios,colors=colors)
 plotSpecCosts(chosen_data,chosen_scen,colors=colors,rot=rotation)
